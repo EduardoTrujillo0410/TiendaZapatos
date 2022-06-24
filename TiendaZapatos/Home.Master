@@ -1,0 +1,190 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="TiendaZapatos.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Inventario Bodega</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" integrity="sha512-77kidyGDJGWWmJ0MVO0CRp+6nRgZRK67frUVBRvnL1zCcmcw9FkCQxpDHq52SebW+KWTAnnuX0Qk2/MQWogWoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href=" https://cdn.datatables.net/1.9.4/css/jquery.dataTables.css" />
+
+    <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <style>
+        html, body {
+            min-height: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        iframe {
+            display: block;
+            overflow: auto;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .frame {
+            height: 49px;
+            margin: 0;
+            padding: 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .frame a {
+                color: #666;
+            }
+
+                .frame a:hover {
+                    color: #222;
+                }
+
+            .frame .buttons a {
+                height: 49px;
+                line-height: 49px;
+                display: inline-block;
+                text-align: center;
+                width: 50px;
+                border-left: 1px solid #ddd;
+            }
+
+            .frame .brand {
+                color: #444;
+                font-size: 20px;
+                line-height: 49px;
+                display: inline-block;
+                padding-left: 10px;
+            }
+
+                .frame .brand small {
+                    font-size: 14px;
+                }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        .container-fluid {
+            padding: 0;
+            margin: 0;
+        }
+
+        .text-muted {
+            color: #999;
+        }
+
+        .ad {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: #222;
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            color: #fff;
+            display: none;
+        }
+
+        #close-ad {
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #close {
+            cursor: pointer;
+        }
+
+        #no-cursor {
+            cursor: none;
+        }
+    </style>
+
+</head>
+<body class="skin-blue">
+    <header class="header">
+        <!-- CABECERA DE PAGINA MAESTRA -->
+        <a href="#" class="logo">ShoeStore</a>
+        <nav class="navbar navbar-static-top" role="navigation">
+
+            <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+        </nav>
+        <!-- END CABECERA -->
+    </header>
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+        <aside class="left-side sidebar-offcanvas">
+            <section class="sidebar">
+                <div class="user-panel">
+                    <div class="pull-left info">
+                        <p>Bienvenido!</p>
+                    </div>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="active">
+                        <a href="GestionarReferencia.aspx">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Registro Referencia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th"></i>
+                            <span>Registro Stock</span>
+
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <aside class="right-side">
+        <section class="content-header">
+            <h1>
+                <asp:Label ID="lblOpcionMenu" runat="server" Text="Registro"></asp:Label>
+            </h1>
+        </section>
+        <section class="content">
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <!-- CARGAR EL DISEÑO DE LA PAGINA QUE HEREDA DE MASTER PAGE -->
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </section>
+    </aside>
+
+    </div>      <!-- FIN DEL WRAPPER -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.9.4/js/jquery.dataTables.js"></script> <!-- NUEVO-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.9.4/js/jquery.dataTables.min.js"></script>
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+    
+    <script src="js/AdminLTE/app.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="js/paciente.js"></script> 
+    
+    <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>
