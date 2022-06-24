@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <!-- EN LA PRIMERA LINEA ARRIBA PONER SIEMPRE ClientIDMode="Static" -->
 
     <section class="content-header">
         <h1 style="text-align: center">REGISTRO REFERENCIAS</h1>
@@ -55,9 +56,10 @@
                         <h3 class="box-title">Lista de Referencias</h3>
                     </div>
                     <div class="box-body table-responsive">
-                        <table id="tbl_pacientes" class="table table-bordered table-hover text-center">
+                        <table id="tbl_referencias" class="table table-bordered table-hover text-center">
                             <thead>
                                 <tr>
+                                    <th>Código</th>
                                     <th>Referencia</th>
                                     <th>Serial</th>
                                     <th>Acciones</th>
@@ -86,13 +88,13 @@
                         <label>REFERENCIA</label>
                     </div>
                     <div class="form-group">
-                        <asp:TextBox ID="txtFullName" runat="server" Text="" CssClass="form-control" Enabled="false"></asp:TextBox>
+                        <asp:TextBox ID="txtAReferencia" runat="server" Text="" CssClass="form-control" Enabled="false"></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <label>SERIAL</label>
                     </div>
                     <div class="form-group">
-                        <asp:TextBox ID="txtModalDireccion" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtSerial" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
                 <div class="modal-footer">

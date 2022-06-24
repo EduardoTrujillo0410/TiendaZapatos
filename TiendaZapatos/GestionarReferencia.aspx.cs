@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
@@ -14,10 +15,48 @@ namespace TiendaZapatos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            
+        }
+
+
+        [WebMethod]
+        public static List<Referencia> ListarReferencias()
+        {
+            List<Referencia> Lista = null;
+            try
             {
-                
+                Lista = ReferenciaLN.getInstance().ListarReferencias();
             }
+            catch (Exception ex)
+            {
+                Lista = null;
+            }
+            return Lista;
+        }
+
+
+        [WebMethod]
+        public static bool ActualizarDatosReferencia(String id, String serial)
+        {
+            Referencia objReferencia = new Referencia()
+            {
+                idReferencia = Convert.ToInt32(id),
+                RefSerial = serial
+            };
+
+            bool ok = ReferenciaLN.getInstance().Actualizar(objReferencia);
+            return ok;
+        }
+
+        [WebMethod]
+        public static bool EliminarDatosReferencia(String id)
+        {
+            Int32 idReferencia = Convert.ToInt32(id);
+
+            bool ok = ReferenciaLN.getInstance().Eliminar(idReferencia);
+
+            return ok;
+
         }
 
         private Referencia GetEntity()

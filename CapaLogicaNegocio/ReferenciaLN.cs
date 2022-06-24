@@ -35,6 +35,43 @@ namespace CapaLogicaNegocio
                 throw ex;
             }
         }
+
+        public List<Referencia> ListarReferencias()
+        {
+            try
+            {
+                return ReferenciaDAO.getInstance().ListarReferencias();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public bool Actualizar(Referencia objReferencia)
+        {
+            try
+            {
+                return ReferenciaDAO.getInstance().Actualizar(objReferencia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                return ReferenciaDAO.getInstance().Eliminar(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
