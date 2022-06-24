@@ -226,6 +226,7 @@
     <Content Include="css\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GestionarReferencia.aspx" />
+    <Content Include="GestionarStock.aspx" />
     <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ajax-loader1.gif" />
     <Content Include="img\avatar.png" />
@@ -389,6 +390,13 @@
     </Compile>
     <Compile Include="GestionarReferencia.aspx.designer.cs">
       <DependentUpon>GestionarReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarStock.aspx.cs">
+      <DependentUpon>GestionarStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarStock.aspx.designer.cs">
+      <DependentUpon>GestionarStock.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>
