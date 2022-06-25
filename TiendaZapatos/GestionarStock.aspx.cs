@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaEntidades;
@@ -20,6 +21,46 @@ namespace TiendaZapatos
                 LlenadoDropDown();
             }
             
+        }
+
+
+        [WebMethod]
+        public static List<Stock> ListarStock()
+        {
+            List<Stock> Lista = null;
+            try
+            {
+                Lista = StockLN.getInstance().ListarStock();
+            }
+            catch (Exception ex)
+            {
+                Lista = null;
+            }
+            return Lista;
+        }
+
+        [WebMethod]
+        public static bool ActualizarDatosStock(String id, String serial)
+        {
+            Stock objStock = new Stock()
+            {
+                idStock = Convert.ToInt32(id),
+                serial = serial
+            };
+
+            bool ok = StockLN.getInstance().Actualizar(objStock);
+            return ok;
+        }
+
+        [WebMethod]
+        public static bool EliminarDatosStock(String id)
+        {
+            Int32 idStock = Convert.ToInt32(id);
+
+            bool ok = StockLN.getInstance().Eliminar(idStock);
+
+            return ok;
+
         }
 
         private void LlenadoDropDown()

@@ -53,5 +53,109 @@ namespace CapaAccesoDatos
             }
             return response;
         }
+
+        public List<Stock> ListarStock()
+        {
+            List<Stock> Lista = new List<Stock>();
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr = null;
+
+            try
+            {
+                con = Conexion.getInstance().ConexionDB();
+                cmd = new SqlCommand("spListarStock", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    // Crear objetos de tipo Paciente
+                    Stock objStock = new Stock();
+                    objStock.idStock = Convert.ToInt32(dr["idStock"].ToString());
+                    objStock.serial = dr["serial"].ToString();
+                    objStock.nomReferencia = dr["nomReferencia"].ToString();
+
+                    // añadir a la lista de objetos
+                    Lista.Add(objStock);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return Lista;
+        }
+
+
+        public bool Actualizar(Stock objStock)
+        {
+            bool ok = false;
+            SqlConnection conexion = null;
+            SqlCommand cmd = null;
+            try
+            {
+                conexion = Conexion.getInstance().ConexionDB();
+                cmd = new SqlCommand("spActualizarDatosStock", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@prmIdStock", objStock.idStock);
+                cmd.Parameters.AddWithValue("@prmSerial", objStock.serial);
+
+                conexion.Open();
+
+                cmd.ExecuteNonQuery();
+
+                ok = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return ok;
+        }
+
+
+        public bool Eliminar(int id)
+        {
+            SqlConnection conexion = null;
+            SqlCommand cmd = null;
+            bool ok = false;
+            try
+            {
+                conexion = Conexion.getInstance().ConexionDB();
+                cmd = new SqlCommand("spEliminarStock", conexion);
+                cmd.Parameters.AddWithValue("@prmIdStock", id);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                conexion.Open();
+
+                cmd.ExecuteNonQuery();
+
+                ok = true;
+
+            }
+            catch (Exception ex)
+            {
+                ok = false;
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return ok;
+        }
+
     }
 }

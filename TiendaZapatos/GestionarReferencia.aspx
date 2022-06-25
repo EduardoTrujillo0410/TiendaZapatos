@@ -107,4 +107,5 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script type="text/javascript" src="js/referencia.js"></script> 
 </asp:Content>

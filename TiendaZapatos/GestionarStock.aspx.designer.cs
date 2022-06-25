@@ -51,21 +51,12 @@ namespace TiendaZapatos
         protected global::System.Web.UI.WebControls.Button btnCancelar;
 
         /// <summary>
-        /// Control txtAReferencia.
+        /// Control txtASerial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAReferencia;
-
-        /// <summary>
-        /// Control txtSerialActualizar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSerialActualizar;
+        protected global::System.Web.UI.WebControls.TextBox txtASerial;
     }
 }

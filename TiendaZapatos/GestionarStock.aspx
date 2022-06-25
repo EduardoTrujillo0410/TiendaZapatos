@@ -44,22 +44,21 @@
         </div>
         <br />
 
-
 <!-- Datatable Part -->
 
         <div class="row">
             <div class="col-xs-12">
                 <div class="box box-primary">
                     <div class="box-header">
-                        <h3 class="box-title">Lista de Referencias</h3>
+                        <h3 class="box-title">Stock en bodega</h3>
                     </div>
                     <div class="box-body table-responsive">
-                        <table id="tbl_referencias" class="table table-bordered table-hover text-center">
+                        <table id="tbl_stock" class="table table-bordered table-hover text-center">
                             <thead>
                                 <tr>
                                     <th>Código</th>
-                                    <th>Referencia</th>
                                     <th>Serial</th>
+                                    <th>Referencia</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -83,16 +82,10 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>REFERENCIA</label>
-                    </div>
-                    <div class="form-group">
-                        <asp:TextBox ID="txtAReferencia" runat="server" Text="" CssClass="form-control" Enabled="false"></asp:TextBox>
-                    </div>
-                    <div class="form-group">
                         <label>SERIAL</label>
                     </div>
                     <div class="form-group">
-                        <asp:TextBox ID="txtSerialActualizar" runat="server" Text="" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtASerial" runat="server" Text="" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -104,4 +97,5 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
+    <script type="text/javascript" src="js/stock.js"></script>
 </asp:Content>

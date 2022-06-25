@@ -182,8 +182,10 @@
     
     <script src="js/AdminLTE/app.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="js/referencia.js"></script> 
+    <!-- <script type="text/javascript" src="js/referencia.js"></script>  -->
     
+    <!-- ENVIO LOS JS A CADA UNA DE LAS VISTAS PARA CARGAR PETICIONES AJAX POR SEPARADO Y NO INTERFERIR CON LOS DATATABLES -->
+
     <asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder>
 
 </body>

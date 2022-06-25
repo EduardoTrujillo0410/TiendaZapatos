@@ -36,5 +36,42 @@ namespace CapaLogicaNegocio
             }
         }
 
+        public List<Stock> ListarStock()
+        {
+            try
+            {
+                return StockDAO.getInstance().ListarStock();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        public bool Actualizar(Stock objStock)
+        {
+            try
+            {
+                return StockDAO.getInstance().Actualizar(objStock);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                return StockDAO.getInstance().Eliminar(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

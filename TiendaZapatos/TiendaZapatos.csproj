@@ -381,6 +381,7 @@
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="js\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="js\referencia.js" />
+    <Content Include="js\stock.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
